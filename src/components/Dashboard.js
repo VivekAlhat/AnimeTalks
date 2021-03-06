@@ -1,21 +1,24 @@
 import React from "react";
-import { Button } from "@material-ui/core";
 import { auth } from "../firebase/firebase";
 import styled from "styled-components";
+import Rooms from "./Rooms";
 
 const Dashboard = (props) => {
   return (
     <DashboardContainer>
-      <h1>Hello {props.displayName}!</h1>
-      <Button
-        variant="contained"
-        color="primary"
+      <h4>
+        Welcome <span>{props.displayName}!</span>
+      </h4>
+      <p
         onClick={() => {
           auth.signOut();
         }}
       >
-        Sign Out
-      </Button>
+        [ Sign Out ]
+      </p>
+      <React.Fragment>
+        <Rooms />
+      </React.Fragment>
     </DashboardContainer>
   );
 };
@@ -26,12 +29,21 @@ export default Dashboard;
 
 const DashboardContainer = styled.div`
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 50px;
+  span {
+    font-weight: 700;
+  }
 
-  > Button {
-    text-transform: capitalize;
+  > p {
+    cursor: pointer;
+    width: fit-content;
+
+    :hover {
+      color: #7868e6;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 25px !important;
   }
 `;

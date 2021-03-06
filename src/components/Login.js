@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
+import { Button } from "react-bootstrap";
 import { auth, provider } from "../firebase/firebase";
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
       <LoginBox>
         <h1>Animetalks.</h1>
         <p>Be a part of the biggest anime community!</p>
-        <Button color="primary" variant="contained" onClick={signIn}>
+        <Button color="primary" onClick={signIn}>
           Sign in with Google
         </Button>
       </LoginBox>
