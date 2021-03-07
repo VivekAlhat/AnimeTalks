@@ -18,7 +18,6 @@ const Login = () => {
           Sign in with Google
         </Button>
       </LoginBox>
-
       <LoginLogo>
         <img src="/images/art.svg" alt="login-art" />
       </LoginLogo>
@@ -34,7 +33,7 @@ const LoginContainer = styled.div`
   background-color: #edeef7;
   height: 100vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 const LoginBox = styled.div`
@@ -57,6 +56,6 @@ const LoginLogo = styled.div`
   justify-content: center;
 
   > img {
-    height: 50%;
+    height: 60%;
   }
 `;
